@@ -27,7 +27,7 @@ export default {
 
 <style>
 .home {
-  background-color: yellow;
+  background-color: #a6b7c5;
   font-weight: bold;
   padding: 10px;
 }

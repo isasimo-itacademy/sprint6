@@ -16,8 +16,21 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .escena {
-  background-color: greenyellow;
+  background-color: rgb(225 236 249);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
+
+li {
+  border: 2px solid rgb(25, 24, 26);
+  border-radius: 25px;
+  list-style: none;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
 </style>
