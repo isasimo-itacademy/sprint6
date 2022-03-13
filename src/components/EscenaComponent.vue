@@ -1,8 +1,20 @@
 <template>
   <div class="escena">
-    <p>El nostre heroi estava surant per l'espai sideral quan a la llunyania va albirar una nau espacial</p>
+    <H3>Escena</H3>
+     <ul>
+        <li v-for="(frase, index) in frases" v-bind:key="index">{{frase}}</li>
+    </ul>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'EscenaComponent',
+  props: {
+    frases: Array
+  }
+}
+</script>
 
 <style>
 .escena {
