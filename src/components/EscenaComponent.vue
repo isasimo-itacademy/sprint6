@@ -1,8 +1,13 @@
 <template>
   <div class="escena">
-    <H3>Escena</H3>
-     <ul>
-        <li v-for="(frase, index) in frases" v-bind:key="index">{{frase}}</li>
+    <h3>Escena</h3>
+    <ul>
+        <li 
+          v-for="(frase, index) in frases" 
+          v-bind:key="index"
+          v-bind:class="{ active: index === currentSentence}">
+          {{frase}}
+        </li>
     </ul>
   </div>
 </template>
@@ -11,7 +16,8 @@
 export default {
   name: 'EscenaComponent',
   props: {
-    frases: Array
+    frases: Array,
+    currentSentence: Number
   }
 }
 </script>
@@ -25,12 +31,23 @@ export default {
   flex-direction: column;
 }
 
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
 li {
   border: 2px solid rgb(25, 24, 26);
   border-radius: 25px;
   list-style: none;
   padding: 10px;
   margin-bottom: 5px;
+}
+
+.active{
+  background-color: yellow;
 }
 
 </style>
