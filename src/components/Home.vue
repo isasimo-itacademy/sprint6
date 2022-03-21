@@ -1,8 +1,13 @@
 <template>
   <div class="home">
     <h1>Home</h1>
-    <BotonsComponent :currentSentence="currentSentence" @mostra-seguent="incrementa" @mostra-anterior="resta"/>
-    <EscenaComponent :frases="frases" :currentSentence="currentSentence"></EscenaComponent>
+    <div v-if="showScene">
+      <BotonsComponent :currentSentence="currentSentence" @mostra-seguent="incrementa" @mostra-anterior="resta"/>
+      <EscenaComponent :frases="frases" :currentSentence="currentSentence"></EscenaComponent>
+    </div>
+    <div v-else>
+      <button @click="showScene = !showScene">Començar</button>
+    </div>
   </div>
 </template>
 
@@ -23,7 +28,8 @@ export default {
                 "L'heroi va decidir travessar la porta que el portava a casa",
                 "Mentrestant, altres heroes no van tenir tanta sort en la seva elecció ..."
               ],
-      currentSentence: 0
+      currentSentence: 0,
+      showScene: false
     }
   },
   methods: {
