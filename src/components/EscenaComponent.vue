@@ -1,5 +1,5 @@
 <template>
-  <div class="escena" v-bind:style="{ backgroundImage: 'url(' + frases[currentSentence].img + ')' }">
+  <div class="escena" v-bind:style="{ backgroundImage: `url(${require('@/assets/' + frases[currentSentence].img )})` }">
     <!-- <h3>Escena</h3> -->
     <ul>
         <li 
