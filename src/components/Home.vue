@@ -1,8 +1,13 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
-    <BotonsComponent :currentSentence="currentSentence" @mostra-seguent="incrementa" @mostra-anterior="resta"/>
-    <EscenaComponent :frases="frases" :currentSentence="currentSentence"></EscenaComponent>
+    <!-- <h1>Home</h1> -->
+    <div v-if="showScene">
+      <BotonsComponent :currentSentence="currentSentence" @mostra-seguent="incrementa" @mostra-anterior="resta"/>
+      <EscenaComponent :frases="frases" :currentSentence="currentSentence"></EscenaComponent>
+    </div>
+    <div v-else>
+      <button @click="showScene = !showScene">Començar</button>
+    </div>
   </div>
 </template>
 
@@ -18,12 +23,25 @@ export default {
   },
   data() {
     return {
-      frases: [ "El nostre heroi estava surant per l'espai sideral quan a la llunyania va albirar una nau espacial",
-                "Sentia curiositat per l'interior de la nau i es va posar a inspeccionar-la. Va arribar a una sala amb dues portes.",
-                "L'heroi va decidir travessar la porta que el portava a casa",
-                "Mentrestant, altres heroes no van tenir tanta sort en la seva elecció ..."
+      frases: [ { 
+                  text: "El nostre heroi estava surant per l'espai sideral quan a la llunyania va albirar una nau espacial",
+                  img: '1.jpg'
+                },
+                { 
+                  text: "Sentia curiositat per l'interior de la nau i es va posar a inspeccionar-la. Va arribar a una sala amb dues portes.",
+                  img: '2.jpg'
+                },
+                { 
+                  text: "L'heroi va decidir travessar la porta que el portava a casa",
+                  img: '3.jpg'
+                },
+                { 
+                  text: "Mentrestant, altres heroes no van tenir tanta sort en la seva elecció ...",
+                  img: '4.jpg'
+                }
               ],
-      currentSentence: 0
+      currentSentence: 0,
+      showScene: false
     }
   },
   methods: {
@@ -47,7 +65,7 @@ export default {
 
 <style>
 .home {
-  background-color: #a6b7c5;
+  background-color: rgb(225 236 249);
   font-weight: bold;
   padding: 10px;
 }

@@ -12,7 +12,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
     button {
         width: 40%;
         padding: 15px;
@@ -20,5 +20,6 @@ export default {
         border: 2px solid rgb(25, 24, 26);
         border-radius: 25px;
         margin: 20px;
+        cursor: pointer;
     }
 </style>
